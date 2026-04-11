@@ -1,0 +1,10 @@
+# ninja log v5
+44	5318	7952132256431596	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	1bdbc85137569b80
+55	5367	7952132256925097	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	3211de92aacadf9d
+72	5376	7952132256950437	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	84ad2d6b6d87f019
+0	5384	7952132257077110	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	1667d53d72ccd6a2
+9	5436	7952132257668513	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	2556941c9f8d9840
+32	5694	7952132260107484	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	3fe9eb7c77fafdeb
+19	5777	7952132261043071	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	843ae768f2d2f10a
+63	6170	7952132264995246	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	8a061a5c9f0e4c6a
+6171	6496	7952132268351887	C:/UnityProjects/PizzaVR_new/projectRoniShoval/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/Debug/6h726c72/obj/arm64-v8a/libgame.so	7a7108ccd43af4fc
