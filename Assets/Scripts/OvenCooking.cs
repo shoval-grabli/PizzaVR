@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.Events;
 
 public class OvenCooking : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class OvenCooking : MonoBehaviour
     public float cookingTime = 3f;
     public Color cookedColor = new Color(1f, 0.5f, 0f);
     public string pizzaTag = "Dough";
+    public AudioSource cookingAudio;
 
     [Header("אפקט תנור — זוהר אש")]
     public Renderer ovenInteriorRenderer;
@@ -22,6 +24,9 @@ public class OvenCooking : MonoBehaviour
     private Coroutine fireCoroutine;
     private bool isCooking = false;
 
+    [Header("Events")]
+    public UnityEvent OnStartCooking;
+    public UnityEvent OnEndCooking;
     void Start()
     {
         if (ovenInteriorRenderer != null)
@@ -43,6 +48,7 @@ public class OvenCooking : MonoBehaviour
 
     IEnumerator CookPizza(GameObject pizza)
     {
+        OnStartCooking.Invoke();
         // הפעל אפקט אש
         fireCoroutine = StartCoroutine(FireEffect());
 
@@ -50,6 +56,9 @@ public class OvenCooking : MonoBehaviour
         if (fireParticles != null)
             fireParticles.Play();
 
+        if (cookingAudio != null)
+            if (cookingAudio.clip != null)
+            cookingAudio.Play();
         // המתן לסיום הבישול
         yield return new WaitForSeconds(cookingTime);
 
@@ -69,7 +78,8 @@ public class OvenCooking : MonoBehaviour
         isCooking = false;
 
         FindFirstObjectByType<PizzaOrder>()?.PizzaCooked();
-        FindFirstObjectByType<OnboardingManager>()?.OnboardingActionCompleted("oven");
+        //FindFirstObjectByType<OnboardingManager>()?.OnboardingActionCompleted("oven");
+        OnEndCooking.Invoke();
     }
 
     IEnumerator FireEffect()

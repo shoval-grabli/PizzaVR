@@ -1,25 +1,15 @@
 using UnityEngine;
 using System.Collections;
+using NUnit.Framework;
+using System.Collections.Generic;
 
 public class PizzaOrder : MonoBehaviour
 {
     [Header("ההזמנה")]
-    public bool requiresSauce = false;
-    public bool requiresCheese = false;
-    public bool requiresOlives = false;
-    public bool requiresOnion = false;
-    public bool requiresMushroom = false;
-    public bool requiresPepper = false;
     public float orderTime = 120f;
     public bool timerEnabled = true;
-    
-    [Header("מצב הפיצה הנוכחי")]
-    public bool hasSauce = false;
-    public bool hasCheese = false;
-    public bool hasOlives = false;
-    public bool hasOnion = false;
-    public bool hasMushroom = false;
-    public bool hasPepper = false;
+    [SerializeField] List<PizzaIngredient> requiredIngredients;
+    public List<PizzaIngredient> RequiredIngredients {  get { return requiredIngredients; }}
 
     [Header("UI")]
     public TMPro.TextMeshProUGUI orderText;
@@ -29,21 +19,16 @@ public class PizzaOrder : MonoBehaviour
     public UnityEngine.UI.Slider progressBar;
 
     [Header("הפיצה")]
-    public GameObject pizzaObject;
+    public Pizza pizzaObject;
     private Vector3 pizzaOrigin;
     private Color originalPizzaColor;
-
-    private Vector3 sauceSphereOrigin;
-    private Vector3 cheeseSphereOrigin;
-    private Vector3 olivesSphereOrigin;
-    private Vector3 onionSphereOrigin;
-    private Vector3 mushroomSphereOrigin;
-    private Vector3 pepperSphereOrigin;
 
     private float timeRemaining;
     private bool orderActive = false;
     private int currentToppingIndex = 0;
-    private string[] toppingOrder = { "Sauce", "Cheese", "Onion", "Mushroom" };
+    private PizzaIngredient[] toppingOrder = { PizzaIngredient.Sauce, PizzaIngredient.Cheese, PizzaIngredient.Onion, PizzaIngredient.Mushroom };
+
+    public bool AllRequirementsFulfilled { get => requiredIngredients.TrueForAll(ing => pizzaObject.RevealedLayers.Exists(layer => layer == ing)); }
 
     [Header("אובייקטי המרכיבים")]
     public GameObject sauceSphere;
@@ -75,12 +60,6 @@ public class PizzaOrder : MonoBehaviour
         audioSource.spatialBlend = 0f;
         audioSource.volume = 1f;
 
-        if (sauceSphere)    sauceSphereOrigin    = sauceSphere.transform.position;
-        if (cheeseSphere)   cheeseSphereOrigin   = cheeseSphere.transform.position;
-        if (olivesSphere)   olivesSphereOrigin   = olivesSphere.transform.position;
-        if (onionSphere)    onionSphereOrigin     = onionSphere.transform.position;
-        if (mushroomSphere) mushroomSphereOrigin  = mushroomSphere.transform.position;
-        if (pepperSphere)   pepperSphereOrigin    = pepperSphere.transform.position;
 
         if (pizzaObject)
         {
@@ -142,14 +121,7 @@ public class PizzaOrder : MonoBehaviour
 
         if (orderText != null)
         {
-            string display = timerEnabled ? "Your Order: " + Mathf.CeilToInt(timeRemaining) + "s\n\n" : "Your Order:\n\n";
-            if (requiresSauce)    display += (hasSauce    ? "[V]" : "[ ]") + " Sauce\n";
-            if (requiresCheese)   display += (hasCheese   ? "[V]" : "[ ]") + " Cheese\n";
-            if (requiresOlives)   display += (hasOlives   ? "[V]" : "[ ]") + " Olives\n";
-            if (requiresOnion)    display += (hasOnion    ? "[V]" : "[ ]") + " Onion\n";
-            if (requiresMushroom) display += (hasMushroom ? "[V]" : "[ ]") + " Mushroom\n";
-            if (requiresPepper)   display += (hasPepper   ? "[V]" : "[ ]") + " Pepper\n";
-            orderText.text = display;
+            UpdateUI();
         }
 
         if (timeRemaining <= 0)
@@ -168,104 +140,45 @@ public class PizzaOrder : MonoBehaviour
 
     void GenerateRandomOrder()
     {
-        requiresSauce = requiresCheese = requiresOlives = false;
-        requiresOnion = requiresMushroom = requiresPepper = false;
-        hasSauce = hasCheese = hasOlives = false;
-        hasOnion = hasMushroom = hasPepper = false;
 
-        bool[] toppings = new bool[6];
-        int count = Random.Range(2, 4);
+        var rng = new System.Random();
 
-        while (count > 0)
+        for (int i = requiredIngredients.Count - 1; i > 0; i--)
         {
-            int i = Random.Range(0, 6);
-            if (!toppings[i]) { toppings[i] = true; count--; }
+            int j = rng.Next(i + 1);
+            (requiredIngredients[i], requiredIngredients[j]) = (requiredIngredients[j], requiredIngredients[i]);
         }
-
-        requiresSauce    = true;
-        requiresCheese   = true;
-        requiresOlives   = false;
-        requiresOnion    = true;
-        requiresMushroom = true;
-        requiresPepper   = false;
-
-        hasSauce = hasCheese = hasOlives = false;
-        hasOnion = hasMushroom = hasPepper = false;
     }
+
 
     // ─────────────────────────────────────────────
     // Topping Logic
     // ─────────────────────────────────────────────
 
-    public void ToppingAdded(string tag, GameObject ingredient)
+    public void ToppingAdded(PizzaIngredient tag)
     {
         if (currentToppingIndex >= toppingOrder.Length)
         {
-            ReturnIngredientToOrigin(tag, ingredient);
             return;
         }
 
-        string expectedTag = toppingOrder[currentToppingIndex];
+        PizzaIngredient expectedTag = toppingOrder[currentToppingIndex];
 
-        if (tag == expectedTag)
+        if (requiredIngredients.Exists(ing => ing == tag))
         {
-            switch (tag)
-            {
-                case "Sauce":    hasSauce    = true; break;
-                case "Cheese":   hasCheese   = true; break;
-                case "Onion":    hasOnion    = true; break;
-                case "Mushroom": hasMushroom = true; break;
-            }
             currentToppingIndex++;
             PlaySuccessFeedback(); // ✅ משוב הצלחה לתוספת נכונה
             UpdateProgress();
             CheckOrderComplete();
         }
-        else
-        {
-            ReturnIngredientToOrigin(tag, ingredient);
-        }
+        
     }
 
-    public void ReturnIngredientToOrigin(string tag, GameObject ingredient)
-    {
-        switch (tag)
-        {
-            case "Sauce":    ReturnToOrigin(ingredient, sauceSphereOrigin);    break;
-            case "Cheese":   ReturnToOrigin(ingredient, cheeseSphereOrigin);   break;
-            case "Olives":   ReturnToOrigin(ingredient, olivesSphereOrigin);   break;
-            case "Onion":    ReturnToOrigin(ingredient, onionSphereOrigin);    break;
-            case "Mushroom": ReturnToOrigin(ingredient, mushroomSphereOrigin); break;
-            case "Pepper":   ReturnToOrigin(ingredient, pepperSphereOrigin);   break;
-        }
-    }
 
-    void ReturnToOrigin(GameObject ingredient, Vector3 origin)
-    {
-        Rigidbody rb = ingredient.GetComponent<Rigidbody>();
-        if (rb != null)
-        {
-            rb.isKinematic = true;
-            rb.linearVelocity = Vector3.zero;
-            rb.angularVelocity = Vector3.zero;
-        }
-        ingredient.transform.position = origin;
-        ingredient.transform.rotation = Quaternion.identity;
-        if (rb != null) rb.isKinematic = false;
-    }
 
-    public bool IsToppingRequired(string tag)
+    public bool IsToppingRequired(PizzaIngredient tag)
     {
-        switch (tag)
-        {
-            case "Sauce":    return requiresSauce;
-            case "Cheese":   return requiresCheese;
-            case "Olives":   return requiresOlives;
-            case "Onion":    return requiresOnion;
-            case "Mushroom": return requiresMushroom;
-            case "Pepper":   return requiresPepper;
-            default:         return false;
-        }
+        return requiredIngredients.Exists(i  => i == tag);
     }
 
     // ─────────────────────────────────────────────
@@ -274,15 +187,11 @@ public class PizzaOrder : MonoBehaviour
 
     void UpdateUI()
     {
-        if (orderText == null) return;
-
         string display = timerEnabled ? "Your Order: " + Mathf.CeilToInt(timeRemaining) + "s\n\n" : "Your Order:\n\n";
-        if (requiresSauce)    display += (hasSauce    ? "[V]" : "[ ]") + " Sauce\n";
-        if (requiresCheese)   display += (hasCheese   ? "[V]" : "[ ]") + " Cheese\n";
-        if (requiresOlives)   display += (hasOlives   ? "[V]" : "[ ]") + " Olives\n";
-        if (requiresOnion)    display += (hasOnion    ? "[V]" : "[ ]") + " Onion\n";
-        if (requiresMushroom) display += (hasMushroom ? "[V]" : "[ ]") + " Mushroom\n";
-        if (requiresPepper)   display += (hasPepper   ? "[V]" : "[ ]") + " Pepper\n";
+        for (int i = 0; i < requiredIngredients.Count; i++)
+        {
+            display += (pizzaObject.RevealedLayers.Exists(revealed => revealed == requiredIngredients[i]) ? "[V]" : "[ ]") + requiredIngredients[i].ToString() + ".\n";
+        }
         orderText.text = display;
     }
 
@@ -293,12 +202,8 @@ public class PizzaOrder : MonoBehaviour
         int totalSteps = 0;
         int completedSteps = 0;
 
-        if (requiresSauce)    { totalSteps++; if (hasSauce)    completedSteps++; }
-        if (requiresCheese)   { totalSteps++; if (hasCheese)   completedSteps++; }
-        if (requiresOlives)   { totalSteps++; if (hasOlives)   completedSteps++; }
-        if (requiresOnion)    { totalSteps++; if (hasOnion)    completedSteps++; }
-        if (requiresMushroom) { totalSteps++; if (hasMushroom) completedSteps++; }
-        if (requiresPepper)   { totalSteps++; if (hasPepper)   completedSteps++; }
+        totalSteps = requiredIngredients.Count;
+        completedSteps = pizzaObject.RevealedLayers.Count;
 
         totalSteps += 2; // תנור + אריזה
 
@@ -311,16 +216,10 @@ public class PizzaOrder : MonoBehaviour
 
     void CheckOrderComplete()
     {
-        bool anyRequired = requiresSauce || requiresCheese || requiresOlives ||
-                           requiresOnion || requiresMushroom || requiresPepper;
+        bool anyRequired = requiredIngredients.Count > 0;
         if (!anyRequired) return;
 
-        if (hasSauce == requiresSauce &&
-            hasCheese == requiresCheese &&
-            hasOlives == requiresOlives &&
-            hasOnion == requiresOnion &&
-            hasMushroom == requiresMushroom &&
-            hasPepper == requiresPepper)
+        if (AllRequirementsFulfilled)
         {
             orderActive = false;
             Debug.Log("Toppings done! Put in oven.");
@@ -375,12 +274,6 @@ public class PizzaOrder : MonoBehaviour
                 child.gameObject.SetActive(false);
         }
 
-        if (sauceSphere)    { sauceSphere.SetActive(true);    sauceSphere.transform.position    = sauceSphereOrigin; }
-        if (cheeseSphere)   { cheeseSphere.SetActive(true);   cheeseSphere.transform.position   = cheeseSphereOrigin; }
-        if (olivesSphere)   { olivesSphere.SetActive(true);   olivesSphere.transform.position   = olivesSphereOrigin; }
-        if (onionSphere)    { onionSphere.SetActive(true);    onionSphere.transform.position    = onionSphereOrigin; }
-        if (mushroomSphere) { mushroomSphere.SetActive(true); mushroomSphere.transform.position = mushroomSphereOrigin; }
-        if (pepperSphere)   { pepperSphere.SetActive(true);   pepperSphere.transform.position   = pepperSphereOrigin; }
 
         GenerateRandomOrder();
         timeRemaining = orderTime;
@@ -390,7 +283,7 @@ public class PizzaOrder : MonoBehaviour
         currentToppingIndex = 0;
     }
 
-    public bool IsNextTopping(string tag)
+    public bool IsNextTopping(PizzaIngredient tag)
     {
         if (currentToppingIndex >= toppingOrder.Length) return false;
         return toppingOrder[currentToppingIndex] == tag;

@@ -13,6 +13,7 @@ TagManager:
   - Pepper
   - Dough
   - CookedDough
+  - Ingredient
   layers:
   - Default
   - TransparentFX

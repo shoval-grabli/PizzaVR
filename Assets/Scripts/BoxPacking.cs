@@ -1,11 +1,14 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.Events;
 
 public class BoxPacking : MonoBehaviour
 {
     [Header("קריינות אריזה")]
     [Tooltip("עיכוב בשניות לפני הקריינות")]
     public float voiceDelay = 2f;
+    public UnityEvent OnPacking;
+    public UnityEvent OnPackingFinished;
 
     void OnTriggerEnter(Collider other)
     {
@@ -21,7 +24,8 @@ public class BoxPacking : MonoBehaviour
         yield return new WaitForSeconds(voiceDelay);
 
         // הפעל קריינות אריזה
-        FindFirstObjectByType<OnboardingManager>()?.OnboardingActionCompleted("packing");
+        //FindFirstObjectByType<OnboardingManager>()?.OnboardingActionCompleted("packing");
+        OnPackingFinished.Invoke();
 
         // הודע שהפיצה נמסרה
         FindFirstObjectByType<PizzaOrder>()?.PizzaDelivered(pizza);

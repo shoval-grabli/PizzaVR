@@ -404,11 +404,7 @@ public class OnboardingManager : MonoBehaviour
 
         if (currentStep == 4 && order != null)
         {
-            if (order.hasCheese == order.requiresCheese &&
-                order.hasOlives == order.requiresOlives &&
-                order.hasOnion  == order.requiresOnion  &&
-                order.hasMushroom == order.requiresMushroom &&
-                order.hasPepper == order.requiresPepper)
+            if (order.AllRequirementsFulfilled)
             {
                 waitingForPlayerAction = false;
                 StartCoroutine(ShowSuccessAndAdvance());

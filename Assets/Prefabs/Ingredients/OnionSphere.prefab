@@ -13,11 +13,12 @@ GameObject:
   - component: {fileID: 2454006089351649130}
   - component: {fileID: 4135455990618294631}
   - component: {fileID: 5207183601275332480}
+  - component: {fileID: 682228408881053203}
   - component: {fileID: 1983340920153622441}
   - component: {fileID: 6005833836601873025}
   m_Layer: 0
   m_Name: OnionSphere
-  m_TagString: Onion
+  m_TagString: Ingredient
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,7 +110,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -137,11 +138,25 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 4
+  m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &682228408881053203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4622529326798312856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c10e2aa7a9a3144ba64300ac3368695, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PizzaToppingMono
+  topping:
+    toppingName: 3
 --- !u!114 &1983340920153622441
 MonoBehaviour:
   m_ObjectHideFlags: 0

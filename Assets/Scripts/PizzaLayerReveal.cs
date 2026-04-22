@@ -1,35 +1,53 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PizzaLayerReveal : MonoBehaviour
 {
+    [SerializeField] Pizza pizza;
     public GameObject layerToReveal;
-    public string requiredTag;
-
-    void OnCollisionEnter(Collision collision)
+    public PizzaIngredient layersIngredient;
+    [SerializeField] string requiredTag;
+    [SerializeField] UnityEvent OnToppingAdded;
+    
+    PizzaToppingMono ingredient;
+    bool revealed = false;
+    public bool Revealed { get { return revealed; } }
+    
+    void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag(requiredTag))
+        if (other.gameObject.CompareTag(requiredTag))
         {
-            PizzaOrder order = FindFirstObjectByType<PizzaOrder>();
-            if (order == null) return;
+            other.gameObject.TryGetComponent(out ingredient);
+            
+            if (ingredient == null) return;
 
             // בדוק אם זו התוספת הנכונה בתור
-            if (!order.IsNextTopping(requiredTag))
+            if (!pizza.Order.IsNextTopping(ingredient.topping.toppingName))
             {
                 // לא בתור — חזרה למקום
-                order.ReturnIngredientToOrigin(requiredTag, collision.gameObject);
+                ingredient.ReturnToOrigin();
                 return;
             }
 
             // תוספת נכונה ובתור — חשוף את השכבה
-            layerToReveal.SetActive(true);
-            order.ToppingAdded(requiredTag, collision.gameObject);
-            collision.gameObject.SetActive(false);
+            pizza.ActivateLayer(this);
+            pizza.Order.ToppingAdded(ingredient.topping.toppingName);
+            ingredient.ReturnToOrigin();
+            ingredient = null;
+            //collision.gameObject.SetActive(false);
 
             // הודע לאונבורדינג
-            FindFirstObjectByType<OnboardingManager>()?.OnboardingActionCompleted(requiredTag);
+            //FindFirstObjectByType<OnboardingManager>()?.OnboardingActionCompleted(ingredient.toppingName.ToString());
+            OnToppingAdded.Invoke();
         }
         
     }
-    
+    public void Reveal()
+    {
+        if(revealed) return;
+        print("Revealed");
+        revealed = true;
+        layerToReveal.SetActive(true);
+    }
     
 }
