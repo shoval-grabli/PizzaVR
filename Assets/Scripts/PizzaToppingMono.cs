@@ -3,6 +3,7 @@ using UnityEngine;
 public class PizzaToppingMono : MonoBehaviour
 {
     public PizzaTopping topping;
+    //remove and use ReturnToOriginAuto
     Vector3 startingPos;
     Quaternion startingRot;
 

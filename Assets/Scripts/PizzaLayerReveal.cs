@@ -17,10 +17,8 @@ public class PizzaLayerReveal : MonoBehaviour
     {
         if (other.gameObject.CompareTag(requiredTag))
         {
-            other.gameObject.TryGetComponent(out ingredient);
+            if(!other.gameObject.TryGetComponent(out ingredient)) return;
             
-            if (ingredient == null) return;
-
             // בדוק אם זו התוספת הנכונה בתור
             if (!pizza.Order.IsNextTopping(ingredient.topping.toppingName))
             {

@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 6863344156456011721}
   m_Layer: 0
   m_Name: SauceSphere
-  m_TagString: Sauce
+  m_TagString: Ingredient
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -116,7 +116,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.17960604
-  m_Center: {x: -0, y: 0.33, z: -0.02}
+  m_Center: {x: -0, y: 0.12, z: -0.02}
 --- !u!54 &4249786634291671213
 Rigidbody:
   m_ObjectHideFlags: 0
