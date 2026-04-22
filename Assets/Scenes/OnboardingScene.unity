@@ -1875,21 +1875,6 @@ MonoBehaviour:
   glowColor: {r: 1, g: 0.85, b: 0, a: 1}
   pulsingHalo: 1
   pulseSpeed: 2
-  OnStart:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1263960939}
-        m_TargetAssemblyTypeName: PizzaOrder, Assembly-CSharp
-        m_MethodName: OnboardingStart
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!4 &205534027
 Transform:
   m_ObjectHideFlags: 0
@@ -6502,8 +6487,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1299148066965166079, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1347053671930125679, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1367778769795980796, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1479944553216138837, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
@@ -6644,7 +6637,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4007501367374285879, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_ActionAssets.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4007501367374285879, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: 'm_ActionAssets.Array.data[1]'
@@ -22866,6 +22859,30 @@ PrefabInstance:
       propertyPath: onboardingManager
       value: 
       objectReference: {fileID: 205534026}
+    - target: {fileID: 5243319975618791109, guid: eecdf952f57bc0043ae4a2db6310bd37, type: 3}
+      propertyPath: requiredIngredients.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5243319975618791109, guid: eecdf952f57bc0043ae4a2db6310bd37, type: 3}
+      propertyPath: 'requiredIngredients.Array.data[1]'
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5243319975618791109, guid: eecdf952f57bc0043ae4a2db6310bd37, type: 3}
+      propertyPath: 'requiredIngredients.Array.data[2]'
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5243319975618791109, guid: eecdf952f57bc0043ae4a2db6310bd37, type: 3}
+      propertyPath: 'requiredIngredients.Array.data[3]'
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5243319975618791109, guid: eecdf952f57bc0043ae4a2db6310bd37, type: 3}
+      propertyPath: 'requiredIngredients.Array.data[4]'
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5243319975618791109, guid: eecdf952f57bc0043ae4a2db6310bd37, type: 3}
+      propertyPath: 'requiredIngredients.Array.data[5]'
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5243319975618791109, guid: eecdf952f57bc0043ae4a2db6310bd37, type: 3}
       propertyPath: toppingsPositions_Keys.Array.size
       value: 6
