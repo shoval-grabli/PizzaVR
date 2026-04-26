@@ -20,7 +20,6 @@ public class PizzaOrder : MonoBehaviour
 
     [Header("הפיצה")]
     public Pizza pizzaObject;
-    private Vector3 pizzaOrigin;
     private Color originalPizzaColor;
 
     private float timeRemaining;
@@ -30,13 +29,6 @@ public class PizzaOrder : MonoBehaviour
 
     public bool AllRequirementsFulfilled { get => requiredIngredients.TrueForAll(ing => pizzaObject.RevealedLayers.Exists(layer => layer == ing)); }
 
-    [Header("אובייקטי המרכיבים")]
-    public GameObject sauceSphere;
-    public GameObject cheeseSphere;
-    public GameObject olivesSphere;
-    public GameObject onionSphere;
-    public GameObject mushroomSphere;
-    public GameObject pepperSphere;
 
     // ─────────────────────────────────────────────
     // משוב הצלחה
@@ -63,7 +55,6 @@ public class PizzaOrder : MonoBehaviour
 
         if (pizzaObject)
         {
-            pizzaOrigin = pizzaObject.transform.position;
             Renderer r = pizzaObject.GetComponent<Renderer>();
             if (r) originalPizzaColor = r.material.color;
         }
@@ -242,7 +233,7 @@ public class PizzaOrder : MonoBehaviour
         if (progressBar != null) progressBar.value = 0.8f;
     }
 
-    public void PizzaDelivered(GameObject pizza)
+    public void PizzaDelivered()
     {
         
         Debug.Log("Pizza complete!");
@@ -265,7 +256,7 @@ public class PizzaOrder : MonoBehaviour
     {
         if (pizzaObject)
         {
-            pizzaObject.transform.position = pizzaOrigin;
+            
             pizzaObject.tag = "Dough";
             Renderer r = pizzaObject.GetComponent<Renderer>();
             if (r) r.material.color = originalPizzaColor;

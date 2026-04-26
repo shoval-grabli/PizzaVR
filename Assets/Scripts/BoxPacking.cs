@@ -4,6 +4,8 @@ using UnityEngine.Events;
 
 public class BoxPacking : MonoBehaviour
 {
+    [Header("box components")]
+    [SerializeField] Transform pizzaLocation;
     [Header("קריינות אריזה")]
     [Tooltip("עיכוב בשניות לפני הקריינות")]
     public float voiceDelay = 2f;
@@ -12,13 +14,15 @@ public class BoxPacking : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("CookedDough"))
+        Pizza pizza;
+        other.gameObject.TryGetComponent(out pizza);
+        if (pizza != null)
         {
-            StartCoroutine(PackWithDelay(other.gameObject));
+            StartCoroutine(PackWithDelay(pizza));
         }
     }
 
-    IEnumerator PackWithDelay(GameObject pizza)
+    IEnumerator PackWithDelay(Pizza pizza)
     {
         // המתן 2 שניות
         yield return new WaitForSeconds(voiceDelay);
@@ -28,6 +32,9 @@ public class BoxPacking : MonoBehaviour
         OnPackingFinished.Invoke();
 
         // הודע שהפיצה נמסרה
-        FindFirstObjectByType<PizzaOrder>()?.PizzaDelivered(pizza);
+        if (pizza.Pack(pizzaLocation))
+            print("Pizza delivered successfully");
+        //FindFirstObjectByType<PizzaOrder>()?.PizzaDelivered(pizza);
+
     }
 }

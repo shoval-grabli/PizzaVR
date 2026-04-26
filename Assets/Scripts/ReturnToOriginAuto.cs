@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
@@ -7,6 +8,9 @@ public class ReturnToOriginAuto : MonoBehaviour
     private Quaternion originRotation;
     private Rigidbody rb;
     private UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable grabInteractable;
+
+    bool overriden = false;
+    public bool Override {  get { return overriden; } set { overriden = value; print("return to origin auto for " + gameObject.name + " overriden"); } }
 
     void Start()
     {
@@ -27,6 +31,7 @@ public class ReturnToOriginAuto : MonoBehaviour
 
     public void ReturnHome()
     {
+        if(overriden) return;
         if (rb != null)
         {
             rb.isKinematic = true;

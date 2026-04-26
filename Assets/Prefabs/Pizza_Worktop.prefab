@@ -4941,6 +4941,7 @@ GameObject:
   - component: {fileID: 3506344227389621396}
   - component: {fileID: 4619484132254778447}
   - component: {fileID: 2595072096658265122}
+  - component: {fileID: 9133915142025121028}
   m_Layer: 0
   m_Name: Oven
   m_TagString: Untagged
@@ -4962,6 +4963,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2490080935486218781}
+  - {fileID: 5958696658084894636}
   m_Father: {fileID: 994747184434163896}
   m_LocalEulerAnglesHint: {x: 0, y: 900.345, z: 0}
 --- !u!33 &318295150144611125
@@ -5041,8 +5043,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.4138287, y: 1, z: 1}
+  m_Center: {x: -0.20691556, y: 0, z: 0.00028044145}
 --- !u!54 &4619484132254778447
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5085,15 +5087,144 @@ MonoBehaviour:
   cookingTime: 8
   cookedColor: {r: 0.9811321, g: 0.5252851, b: 0.0509078, a: 1}
   pizzaTag: Dough
-  cookingAudio: {fileID: 0}
+  cookingAudio: {fileID: 9133915142025121028}
+  pizzaLocation: {fileID: 5958696658084894636}
   ovenInteriorRenderer: {fileID: 3496104765722447421}
   fireColorA: {r: 0.9056604, g: 0.69934076, b: 0.2776789, a: 1}
   fireColorB: {r: 1, g: 0.8, b: 0, a: 1}
   fireFlickerSpeed: 4
-  fireParticles: {fileID: 0}
+  fireParticles: {fileID: 1886796625451828518}
   OnStartCooking:
     m_PersistentCalls:
       m_Calls: []
   OnEndCooking:
     m_PersistentCalls:
       m_Calls: []
+--- !u!82 &9133915142025121028
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5194690099756207517}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 8e3e918e2d1db2f4d9fb24e063e4f790, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!1 &5798690911735124793
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5958696658084894636}
+  m_Layer: 0
+  m_Name: pizzaCookingLocation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5958696658084894636
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5798690911735124793}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8839604998551955894}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -9,6 +9,7 @@ public class OvenCooking : MonoBehaviour
     public Color cookedColor = new Color(1f, 0.5f, 0f);
     public string pizzaTag = "Dough";
     public AudioSource cookingAudio;
+    public Transform pizzaLocation;
 
     [Header("אפקט תנור — זוהר אש")]
     public Renderer ovenInteriorRenderer;
@@ -39,16 +40,20 @@ public class OvenCooking : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag(pizzaTag) && !isCooking)
+        Pizza pizza;
+        if (other.gameObject.TryGetComponent(out pizza) && !isCooking)
         {
             isCooking = true;
-            StartCoroutine(CookPizza(other.gameObject));
+            OnStartCooking.Invoke();
+            pizza.StartCooking();
+            pizza.gameObject.transform.SetPositionAndRotation(pizzaLocation.position, pizzaLocation.rotation);
+            StartCoroutine(CookPizza(pizza));
         }
     }
 
-    IEnumerator CookPizza(GameObject pizza)
+    IEnumerator CookPizza(Pizza pizza)
     {
-        OnStartCooking.Invoke();
+
         // הפעל אפקט אש
         fireCoroutine = StartCoroutine(FireEffect());
 
@@ -77,7 +82,7 @@ public class OvenCooking : MonoBehaviour
         pizza.tag = "CookedDough";
         isCooking = false;
 
-        FindFirstObjectByType<PizzaOrder>()?.PizzaCooked();
+        pizza.EndCooking();
         //FindFirstObjectByType<OnboardingManager>()?.OnboardingActionCompleted("oven");
         OnEndCooking.Invoke();
     }

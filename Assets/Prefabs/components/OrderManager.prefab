@@ -44,22 +44,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12804299aa1964815a7807d7d3892fd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pizzaPF: {fileID: 1679841745978638378, guid: 5baca1367f27048d08398e991700b2f1, type: 3}
-  pizza: {fileID: 0}
-  requiredToppings:
-  - toppingName: 0
-  - toppingName: 1
-  - toppingName: 2
-  - toppingName: 3
-  - toppingName: 4
-  - toppingName: 5
   orderTime: 999
   timerEnabled: 0
+  requiredIngredients: 000000000100000002000000030000000400000005000000
   orderText: {fileID: 0}
+  onboardingManager: {fileID: 0}
   progressBar: {fileID: 0}
   pizzaObject: {fileID: 0}
-  toppingsPositions_Keys: 
-  toppingsPositions_Values: []
+  sauceSphere: {fileID: 0}
+  cheeseSphere: {fileID: 0}
+  olivesSphere: {fileID: 0}
+  onionSphere: {fileID: 0}
+  mushroomSphere: {fileID: 0}
+  pepperSphere: {fileID: 0}
   successClips:
   - {fileID: 8300000, guid: 7399f238e440121498e90b509f23bb58, type: 3}
   - {fileID: 8300000, guid: 363e4b4ae8592c8468ef4196b726962c, type: 3}
