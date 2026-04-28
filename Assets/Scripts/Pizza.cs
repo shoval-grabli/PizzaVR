@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -30,6 +30,39 @@ public class Pizza : MonoBehaviour
             if (!layer.Revealed)
                 layer.Reveal();
         }
+    }
+    internal void ActivateLayer(PizzaToppingMono topping)
+    {
+        if (!cooked && layers.Exists(l => l.layersIngredient == topping.topping.toppingName))
+        {
+            PizzaLayerReveal layer = layers.Find(l => l.layersIngredient == topping.topping.toppingName);
+            if (!layer.Revealed)
+                layer.Reveal();
+        }
+    }
+    private void OnTriggerEnter(Collider collider)
+    {
+        PizzaToppingMono ingredient;
+        if (!collider.gameObject.TryGetComponent(out ingredient)) return;
+
+        // בדוק אם זו התוספת הנכונה בתור
+        if (!Order.IsNextTopping(ingredient.topping.toppingName))
+        {
+            return;
+        }
+        ActivateLayer(ingredient);
+    }
+    private void OnCollisionEnter(Collision collider)
+    {
+        PizzaToppingMono ingredient;
+        if (!collider.gameObject.TryGetComponent(out ingredient)) return;
+
+        // בדוק אם זו התוספת הנכונה בתור
+        if (!Order.IsNextTopping(ingredient.topping.toppingName))
+        {
+            return;
+        }
+        ActivateLayer(ingredient);
     }
 
     public void StartCooking()

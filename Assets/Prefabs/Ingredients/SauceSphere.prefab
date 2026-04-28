@@ -1,5 +1,73 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3217293713132518057
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3627813354225280674}
+  - component: {fileID: 5639309220729154440}
+  - component: {fileID: 6242879892600469359}
+  m_Layer: 0
+  m_Name: Sphere
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3627813354225280674
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3217293713132518057}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3010719793295262658}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &5639309220729154440
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3217293713132518057}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.11
+  m_Center: {x: 0, y: 0.45, z: 0}
+--- !u!114 &6242879892600469359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3217293713132518057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c10e2aa7a9a3144ba64300ac3368695, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PizzaToppingMono
+  topping:
+    toppingName: 0
 --- !u!1 &8655666208162717301
 GameObject:
   m_ObjectHideFlags: 0
@@ -15,7 +83,6 @@ GameObject:
   - component: {fileID: 4249786634291671213}
   - component: {fileID: 778023350896041531}
   - component: {fileID: 8736960579516060105}
-  - component: {fileID: 6863344156456011721}
   m_Layer: 0
   m_Name: SauceSphere
   m_TagString: Ingredient
@@ -37,6 +104,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 437416085040671108}
+  - {fileID: 3627813354225280674}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6147880324410442748
@@ -111,7 +179,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -309,20 +377,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c150b4877e84b744381ff52e8cf2f183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ReturnToOriginAuto
---- !u!114 &6863344156456011721
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8655666208162717301}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c10e2aa7a9a3144ba64300ac3368695, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PizzaToppingMono
-  topping:
-    toppingName: 0
 --- !u!1001 &7759669816212526341
 PrefabInstance:
   m_ObjectHideFlags: 0

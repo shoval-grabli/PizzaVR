@@ -10213,7 +10213,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1679841745978638378, guid: 5baca1367f27048d08398e991700b2f1, type: 3}
   m_PrefabInstance: {fileID: 1366268013}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1806627186}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 414dc06934d3c174e96a83b2e28a5888, type: 3}
@@ -14661,7 +14661,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4413633788620313002, guid: 5baca1367f27048d08398e991700b2f1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1806627192}
   m_SourcePrefab: {fileID: 100100000, guid: 5baca1367f27048d08398e991700b2f1, type: 3}
 --- !u!1 &1374834537
 GameObject:
@@ -18314,6 +18317,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 1
   m_VerticalFit: 0
+--- !u!1 &1806627186 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4413633788620313002, guid: 5baca1367f27048d08398e991700b2f1, type: 3}
+  m_PrefabInstance: {fileID: 1366268013}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1806627192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1806627186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bef289ff4c6596439b92b94c9ac4da7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CollisionInformer
+  message: 
 --- !u!1 &1813520155
 GameObject:
   m_ObjectHideFlags: 0
@@ -22232,10 +22253,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7752594903257646130, guid: 62c03b9b86c4b894095ebaa7448a27ff, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8838761496675590919, guid: 62c03b9b86c4b894095ebaa7448a27ff, type: 3}
       propertyPath: m_Name
       value: 'CheeseSphere '
@@ -22447,10 +22464,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3010719793295262658, guid: d2e4a17dbd30f904ea5ad8f2cecec9c3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4591477312494294689, guid: d2e4a17dbd30f904ea5ad8f2cecec9c3, type: 3}
-      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8655666208162717301, guid: d2e4a17dbd30f904ea5ad8f2cecec9c3, type: 3}

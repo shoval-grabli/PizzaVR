@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using NUnit.Framework;
 using System.Collections.Generic;
+using System;
 
 public class PizzaOrder : MonoBehaviour
 {
@@ -19,15 +20,15 @@ public class PizzaOrder : MonoBehaviour
     public UnityEngine.UI.Slider progressBar;
 
     [Header("הפיצה")]
-    public Pizza pizzaObject;
+    public Pizza pizza;
     private Color originalPizzaColor;
 
     private float timeRemaining;
     private bool orderActive = false;
-    private int currentToppingIndex = 0;
+    private int CurrentToppingIndex { get => pizza.RevealedLayers.Count; }
     private PizzaIngredient[] toppingOrder = { PizzaIngredient.Sauce, PizzaIngredient.Cheese, PizzaIngredient.Onion, PizzaIngredient.Mushroom };
 
-    public bool AllRequirementsFulfilled { get => requiredIngredients.TrueForAll(ing => pizzaObject.RevealedLayers.Exists(layer => layer == ing)); }
+    public bool AllRequirementsFulfilled { get => requiredIngredients.TrueForAll(ing => pizza.RevealedLayers.Exists(layer => layer == ing)); }
 
 
     // ─────────────────────────────────────────────
@@ -53,9 +54,9 @@ public class PizzaOrder : MonoBehaviour
         audioSource.volume = 1f;
 
 
-        if (pizzaObject)
+        if (pizza)
         {
-            Renderer r = pizzaObject.GetComponent<Renderer>();
+            Renderer r = pizza.GetComponent<Renderer>();
             if (r) originalPizzaColor = r.material.color;
         }
 
@@ -65,7 +66,7 @@ public class PizzaOrder : MonoBehaviour
         UpdateUI();
         UpdateProgress();
         
-        var grab = pizzaObject.GetComponent
+        var grab = pizza.GetComponent
             <UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable>();
         if (grab != null) grab.enabled = false;
     }
@@ -79,19 +80,19 @@ public class PizzaOrder : MonoBehaviour
         // נגן קריינות חיובית אקראית
         if (successClips != null && successClips.Length > 0)
         {
-            AudioClip clip = successClips[Random.Range(0, successClips.Length)];
+            AudioClip clip = successClips[UnityEngine.Random.Range(0, successClips.Length)];
             if (audioSource != null && clip != null)
                 audioSource.PlayOneShot(clip);
         }
 
         // אפקט ויזואלי עדין — זוהר ירוק קצר על הפיצה
-        if (pizzaObject != null)
+        if (pizza != null)
             StartCoroutine(FlashSuccess());
     }
 
     IEnumerator FlashSuccess()
     {
-        Renderer r = pizzaObject.GetComponent<Renderer>();
+        Renderer r = pizza.GetComponent<Renderer>();
         if (r == null) yield break;
 
         Color original = r.material.color;
@@ -148,16 +149,15 @@ public class PizzaOrder : MonoBehaviour
 
     public void ToppingAdded(PizzaIngredient tag)
     {
-        if (currentToppingIndex >= toppingOrder.Length)
+        if (CurrentToppingIndex >= toppingOrder.Length)
         {
             return;
         }
 
-        PizzaIngredient expectedTag = toppingOrder[currentToppingIndex];
+        PizzaIngredient expectedTag = toppingOrder[CurrentToppingIndex];
 
         if (requiredIngredients.Exists(ing => ing == tag))
         {
-            currentToppingIndex++;
             PlaySuccessFeedback(); // ✅ משוב הצלחה לתוספת נכונה
             UpdateProgress();
             CheckOrderComplete();
@@ -181,7 +181,7 @@ public class PizzaOrder : MonoBehaviour
         string display = timerEnabled ? "Your Order: " + Mathf.CeilToInt(timeRemaining) + "s\n\n" : "Your Order:\n\n";
         for (int i = 0; i < requiredIngredients.Count; i++)
         {
-            display += (pizzaObject.RevealedLayers.Exists(revealed => revealed == requiredIngredients[i]) ? "[V]" : "[ ]") + requiredIngredients[i].ToString() + ".\n";
+            display += (pizza.RevealedLayers.Exists(revealed => revealed == requiredIngredients[i]) ? "[V]" : "[ ]") + requiredIngredients[i].ToString() + ".\n";
         }
         orderText.text = display;
     }
@@ -194,11 +194,12 @@ public class PizzaOrder : MonoBehaviour
         int completedSteps = 0;
 
         totalSteps = requiredIngredients.Count;
-        completedSteps = pizzaObject.RevealedLayers.Count;
+        completedSteps = pizza.RevealedLayers.Count;
 
         totalSteps += 2; // תנור + אריזה
 
         progressBar.value = totalSteps > 0 ? (float)completedSteps / totalSteps : 0f;
+        UpdateUI();
     }
 
     // ─────────────────────────────────────────────
@@ -217,7 +218,7 @@ public class PizzaOrder : MonoBehaviour
             if (orderText != null)
                 orderText.text = "Now put in oven!";
 
-            var grab = pizzaObject.GetComponent
+            var grab = pizza.GetComponent
                 <UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable>();
             if (grab != null) grab.enabled = true;
             UpdateProgress();
@@ -254,14 +255,14 @@ public class PizzaOrder : MonoBehaviour
 
     void StartNewRound()
     {
-        if (pizzaObject)
+        if (pizza)
         {
             
-            pizzaObject.tag = "Dough";
-            Renderer r = pizzaObject.GetComponent<Renderer>();
+            pizza.tag = "Dough";
+            Renderer r = pizza.GetComponent<Renderer>();
             if (r) r.material.color = originalPizzaColor;
 
-            foreach (Transform child in pizzaObject.transform)
+            foreach (Transform child in pizza.transform)
                 child.gameObject.SetActive(false);
         }
 
@@ -271,12 +272,11 @@ public class PizzaOrder : MonoBehaviour
         orderActive = true;
         UpdateUI();
         UpdateProgress();
-        currentToppingIndex = 0;
     }
 
     public bool IsNextTopping(PizzaIngredient tag)
     {
-        if (currentToppingIndex >= toppingOrder.Length) return false;
-        return toppingOrder[currentToppingIndex] == tag;
+        if (CurrentToppingIndex >= toppingOrder.Length) return false;
+        return toppingOrder[CurrentToppingIndex] == tag;
     }
 }

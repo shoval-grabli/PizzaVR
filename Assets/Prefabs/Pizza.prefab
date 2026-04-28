@@ -55,7 +55,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -724,7 +724,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -1280,7 +1280,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -1481,7 +1481,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.22218, y: 1.2893999, z: 1.22218}
+  m_LocalScale: {x: 0.79303813, y: 0.8366553, z: 0.79303813}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8081005131388401361}
@@ -1612,10 +1612,21 @@ MonoBehaviour:
   pizza: {fileID: 1679841745978638378}
   layerToReveal: {fileID: 6714250293290229610}
   layersIngredient: 0
-  requiredTag: Ingredient
   OnToppingAdded:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: OnboardingManager, Assembly-CSharp
+        m_MethodName: OnboardingActionCompleted
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Sauce
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7682387867483639058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1631,10 +1642,21 @@ MonoBehaviour:
   pizza: {fileID: 1679841745978638378}
   layerToReveal: {fileID: 9008613830651929710}
   layersIngredient: 1
-  requiredTag: Ingredient
   OnToppingAdded:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: OnboardingManager, Assembly-CSharp
+        m_MethodName: OnboardingActionCompleted
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: cheese
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5121932386071085617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1650,10 +1672,21 @@ MonoBehaviour:
   pizza: {fileID: 1679841745978638378}
   layerToReveal: {fileID: 1307322086054909085}
   layersIngredient: 2
-  requiredTag: Ingredient
   OnToppingAdded:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: OnboardingManager, Assembly-CSharp
+        m_MethodName: OnboardingActionCompleted
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: olive
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1729833235067349122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1669,10 +1702,21 @@ MonoBehaviour:
   pizza: {fileID: 1679841745978638378}
   layerToReveal: {fileID: 1678552827650473086}
   layersIngredient: 3
-  requiredTag: Ingredient
   OnToppingAdded:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: OnboardingManager, Assembly-CSharp
+        m_MethodName: OnboardingActionCompleted
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: onion
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7619402229773589881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1688,10 +1732,21 @@ MonoBehaviour:
   pizza: {fileID: 1679841745978638378}
   layerToReveal: {fileID: 94145894022261123}
   layersIngredient: 4
-  requiredTag: Ingredient
   OnToppingAdded:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: OnboardingManager, Assembly-CSharp
+        m_MethodName: OnboardingActionCompleted
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: mushroom
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &9132546660394498848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1707,10 +1762,21 @@ MonoBehaviour:
   pizza: {fileID: 1679841745978638378}
   layerToReveal: {fileID: 8723237249260981733}
   layersIngredient: 5
-  requiredTag: Ingredient
   OnToppingAdded:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: OnboardingManager, Assembly-CSharp
+        m_MethodName: OnboardingActionCompleted
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: pepper
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3151199473641914338
 GameObject:
   m_ObjectHideFlags: 0
@@ -2286,6 +2352,7 @@ GameObject:
   - component: {fileID: 3658161234835009769}
   - component: {fileID: 3308113473564266609}
   - component: {fileID: 4542364375101739119}
+  - component: {fileID: 5961498087296693689}
   m_Layer: 0
   m_Name: Pizza
   m_TagString: Dough
@@ -2624,6 +2691,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::XRInteractableAutoActivate
   interactable: {fileID: 3658161234835009769}
+--- !u!114 &5961498087296693689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4413633788620313002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bef289ff4c6596439b92b94c9ac4da7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CollisionInformer
+  message: 
 --- !u!1 &6714250293290229610
 GameObject:
   m_ObjectHideFlags: 0
@@ -2732,7 +2812,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -3624,7 +3704,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
