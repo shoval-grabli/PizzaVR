@@ -40,10 +40,35 @@ public class Pizza : MonoBehaviour
                 layer.Reveal();
         }
     }
-    private void OnTriggerEnter(Collider collider)
+    //private void OnTriggerEnter(Collider collider)
+    //{
+    //    PizzaToppingMono ingredient;
+    //    if (!collider.gameObject.TryGetComponent(out ingredient)) return;
+
+    //    // בדוק אם זו התוספת הנכונה בתור
+    //    if (!Order.IsNextTopping(ingredient.topping.toppingName))
+    //    {
+    //        return;
+    //    }
+    //    ActivateLayer(ingredient);
+    //}
+    //private void OnCollisionEnter(Collision collider)
+    //{
+    //    PizzaToppingMono ingredient;
+    //    if (!collider.gameObject.TryGetComponent(out ingredient)) return;
+
+    //    // בדוק אם זו התוספת הנכונה בתור
+    //    if (!Order.IsNextTopping(ingredient.topping.toppingName))
+    //    {
+    //        return;
+    //    }
+    //    ActivateLayer(ingredient);
+    //}
+
+    public void InspectTopping(GameObject GO)
     {
         PizzaToppingMono ingredient;
-        if (!collider.gameObject.TryGetComponent(out ingredient)) return;
+        if (!GO.TryGetComponent(out ingredient)) return;
 
         // בדוק אם זו התוספת הנכונה בתור
         if (!Order.IsNextTopping(ingredient.topping.toppingName))
@@ -51,20 +76,8 @@ public class Pizza : MonoBehaviour
             return;
         }
         ActivateLayer(ingredient);
-    }
-    private void OnCollisionEnter(Collision collider)
-    {
-        PizzaToppingMono ingredient;
-        if (!collider.gameObject.TryGetComponent(out ingredient)) return;
 
-        // בדוק אם זו התוספת הנכונה בתור
-        if (!Order.IsNextTopping(ingredient.topping.toppingName))
-        {
-            return;
-        }
-        ActivateLayer(ingredient);
     }
-
     public void StartCooking()
     {
         OnStartCooking.Invoke();

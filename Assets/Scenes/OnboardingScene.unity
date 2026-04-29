@@ -14626,6 +14626,10 @@ PrefabInstance:
       propertyPath: OnToppingAdded.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 8406276387339136674, guid: 5baca1367f27048d08398e991700b2f1, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9132546660394498848, guid: 5baca1367f27048d08398e991700b2f1, type: 3}
       propertyPath: OnToppingAdded.m_PersistentCalls.m_Calls.Array.size
       value: 1

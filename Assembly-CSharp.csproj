@@ -84,12 +84,14 @@
     <Compile Include="Assets\VRTemplateAssets\Scripts\Callout.cs" />
     <Compile Include="Assets\VRTemplateAssets\Scripts\CalloutGazeController.cs" />
     <Compile Include="Assets\Scripts\XR\XRStartingPos.cs" />
+    <Compile Include="Assets\Scripts\PizzaTrigger.cs" />
     <Compile Include="Assets\Scripts\PizzaLayerReveal.cs" />
     <Compile Include="Assets\Scripts\Pizza.cs" />
     <Compile Include="Assets\Scripts\PizzaTopping.cs" />
     <Compile Include="Assets\Scripts\PizzaOrder.cs" />
     <Compile Include="Assets\VRTemplateAssets\Scripts\StepManager.cs" />
     <Compile Include="Assets\Scripts\Utils\MyDictionary.cs" />
+    <Compile Include="Assets\Scripts\Utils\TestingTools\StopOnCollision.cs" />
     <Compile Include="Assets\VRTemplateAssets\Scripts\AnchorVisuals.cs" />
     <Compile Include="Assets\Scripts\ReturnToOriginAuto.cs" />
   </ItemGroup>

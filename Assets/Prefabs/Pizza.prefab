@@ -9,8 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8398018279983108735}
-  - component: {fileID: 8778700721572873539}
-  - component: {fileID: 6375198155004891947}
   m_Layer: 0
   m_Name: MushroomGroup
   m_TagString: Mushroom
@@ -38,76 +36,6 @@ Transform:
   - {fileID: 342696947130538519}
   m_Father: {fileID: 4831348196784665985}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &8778700721572873539
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 94145894022261123}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &6375198155004891947
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 94145894022261123}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_MaskInteraction: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &101576960020920775
 GameObject:
   m_ObjectHideFlags: 0
@@ -119,7 +47,6 @@ GameObject:
   - component: {fileID: 7603642510784152835}
   - component: {fileID: 2417222450809799156}
   - component: {fileID: 6258325749615766681}
-  - component: {fileID: 461789804415859705}
   m_Layer: 0
   m_Name: Mushroom1
   m_TagString: Mushroom
@@ -175,7 +102,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e4bddfdbc555c4e21a8646c54faa5f37, type: 2}
+  - {fileID: 2100000, guid: 4159d70adae457042a2571eccf6ae41d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -199,27 +126,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &461789804415859705
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 101576960020920775}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Radius: 0.03
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &589732412238203132
 GameObject:
   m_ObjectHideFlags: 0
@@ -231,7 +137,6 @@ GameObject:
   - component: {fileID: 3821650266240433427}
   - component: {fileID: 4531607887867660181}
   - component: {fileID: 3284658405284160238}
-  - component: {fileID: 953979396615295081}
   m_Layer: 0
   m_Name: Pepper1
   m_TagString: Pepper
@@ -249,7 +154,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.1295, y: -0.043, z: 0.093}
-  m_LocalScale: {x: 0.05, y: 0.055000003, z: 0.05}
+  m_LocalScale: {x: 0.50395006, y: 0.5543451, z: 0.50395006}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1828918969456369303}
@@ -261,7 +166,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 589732412238203132}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: -4991699829951180597, guid: 64f07d68f6a2cde4199055cb10545b57, type: 3}
 --- !u!23 &3284658405284160238
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -287,7 +192,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 02b19fa45321c4da0b75adc8f26ded41, type: 2}
+  - {fileID: 2100000, guid: 4159d70adae457042a2571eccf6ae41d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -311,27 +216,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &953979396615295081
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 589732412238203132}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Radius: 0.0339728
-  m_Center: {x: 0, y: -0.01, z: 0.00026340783}
 --- !u!1 &849396552668826835
 GameObject:
   m_ObjectHideFlags: 0
@@ -343,7 +227,6 @@ GameObject:
   - component: {fileID: 9143478603920777340}
   - component: {fileID: 5825212526140630000}
   - component: {fileID: 4482762204858038531}
-  - component: {fileID: 7772833531641807682}
   m_Layer: 0
   m_Name: Pepper5
   m_TagString: Pepper
@@ -361,7 +244,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.0073, y: -0.016, z: 0.0091}
-  m_LocalScale: {x: 0.05, y: 0.055000003, z: 0.05}
+  m_LocalScale: {x: 0.50395006, y: 0.5543451, z: 0.50395006}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1828918969456369303}
@@ -373,7 +256,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 849396552668826835}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: -4991699829951180597, guid: 64f07d68f6a2cde4199055cb10545b57, type: 3}
 --- !u!23 &4482762204858038531
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -399,7 +282,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 02b19fa45321c4da0b75adc8f26ded41, type: 2}
+  - {fileID: 2100000, guid: 4159d70adae457042a2571eccf6ae41d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -423,27 +306,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &7772833531641807682
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 849396552668826835}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Radius: 0.0339728
-  m_Center: {x: 0, y: -0.01, z: 0.00026340783}
 --- !u!1 &1136868874673329622
 GameObject:
   m_ObjectHideFlags: 0
@@ -455,7 +317,6 @@ GameObject:
   - component: {fileID: 8565928404181828093}
   - component: {fileID: 7931010877407592686}
   - component: {fileID: 2117971758226867823}
-  - component: {fileID: 6878270935622080777}
   m_Layer: 0
   m_Name: Onion4
   m_TagString: Onion
@@ -511,7 +372,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0909fcd825e1f4c31bee204a055763f4, type: 2}
+  - {fileID: 2100000, guid: 4159d70adae457042a2571eccf6ae41d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -535,27 +396,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &6878270935622080777
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1136868874673329622}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Radius: 0.03491947
-  m_Center: {x: 0, y: 0, z: -0.030042633}
 --- !u!1 &1163241476069671617
 GameObject:
   m_ObjectHideFlags: 0
@@ -567,7 +407,6 @@ GameObject:
   - component: {fileID: 1632286719826160477}
   - component: {fileID: 3390386932129360281}
   - component: {fileID: 746276906765342065}
-  - component: {fileID: 5480410649383604939}
   m_Layer: 0
   m_Name: Mushroom4
   m_TagString: Mushroom
@@ -623,7 +462,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e4bddfdbc555c4e21a8646c54faa5f37, type: 2}
+  - {fileID: 2100000, guid: 4159d70adae457042a2571eccf6ae41d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -647,27 +486,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &5480410649383604939
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1163241476069671617}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Radius: 0.03
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1307322086054909085
 GameObject:
   m_ObjectHideFlags: 0
@@ -677,8 +495,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2942206499093002559}
-  - component: {fileID: 4903942181722595022}
-  - component: {fileID: 1365225599857365843}
   m_Layer: 0
   m_Name: OlivesGroup
   m_TagString: Olives
@@ -707,76 +523,6 @@ Transform:
   - {fileID: 1889697928369062588}
   m_Father: {fileID: 4831348196784665985}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &4903942181722595022
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1307322086054909085}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &1365225599857365843
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1307322086054909085}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_MaskInteraction: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &1356841202685632669
 GameObject:
   m_ObjectHideFlags: 0
@@ -788,7 +534,6 @@ GameObject:
   - component: {fileID: 9128032387786858698}
   - component: {fileID: 1518250486982792945}
   - component: {fileID: 602701651503728004}
-  - component: {fileID: 7612848050310192364}
   m_Layer: 0
   m_Name: Olive2
   m_TagString: Olives
@@ -844,7 +589,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 698a8a42929b04c69b52ddc576ba00e8, type: 2}
+  - {fileID: 2100000, guid: 4159d70adae457042a2571eccf6ae41d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -868,27 +613,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &7612848050310192364
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1356841202685632669}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Radius: 0.04029721
-  m_Center: {x: -0.01, y: -0.03, z: -0.13}
 --- !u!1 &1375796600497300602
 GameObject:
   m_ObjectHideFlags: 0
@@ -900,7 +624,6 @@ GameObject:
   - component: {fileID: 517285216993317271}
   - component: {fileID: 3113664022774428358}
   - component: {fileID: 7063820237013741802}
-  - component: {fileID: 8393980237134921926}
   m_Layer: 0
   m_Name: Olive1
   m_TagString: Olives
@@ -956,7 +679,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 698a8a42929b04c69b52ddc576ba00e8, type: 2}
+  - {fileID: 2100000, guid: 4159d70adae457042a2571eccf6ae41d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -980,27 +703,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &8393980237134921926
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1375796600497300602}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Radius: 0.04029721
-  m_Center: {x: -0.01, y: -0.03, z: -0.13}
 --- !u!1 &1412138512413806364
 GameObject:
   m_ObjectHideFlags: 0
@@ -1012,7 +714,6 @@ GameObject:
   - component: {fileID: 4443604127829926212}
   - component: {fileID: 7920918182415997328}
   - component: {fileID: 6252234135149852492}
-  - component: {fileID: 9025913657561804935}
   m_Layer: 0
   m_Name: Onion5
   m_TagString: Onion
@@ -1068,7 +769,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0909fcd825e1f4c31bee204a055763f4, type: 2}
+  - {fileID: 2100000, guid: 4159d70adae457042a2571eccf6ae41d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1092,27 +793,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &9025913657561804935
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1412138512413806364}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Radius: 0.03491947
-  m_Center: {x: 0, y: 0, z: -0.030042633}
 --- !u!1 &1640946751766649210
 GameObject:
   m_ObjectHideFlags: 0
@@ -1124,7 +804,6 @@ GameObject:
   - component: {fileID: 3645170765369304728}
   - component: {fileID: 4577733955591717956}
   - component: {fileID: 6352157490324571439}
-  - component: {fileID: 1488403066575737728}
   m_Layer: 0
   m_Name: Onion2
   m_TagString: Onion
@@ -1180,7 +859,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0909fcd825e1f4c31bee204a055763f4, type: 2}
+  - {fileID: 2100000, guid: 4159d70adae457042a2571eccf6ae41d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1204,27 +883,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &1488403066575737728
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1640946751766649210}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Radius: 0.03491947
-  m_Center: {x: 0, y: 0, z: -0.030042633}
 --- !u!1 &1678552827650473086
 GameObject:
   m_ObjectHideFlags: 0
@@ -1234,8 +892,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1934847621164250941}
-  - component: {fileID: 5679454505545554656}
-  - component: {fileID: 8406276387339136674}
   m_Layer: 0
   m_Name: OnionGroup
   m_TagString: Onion
@@ -1263,76 +919,6 @@ Transform:
   - {fileID: 4443604127829926212}
   m_Father: {fileID: 4831348196784665985}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &5679454505545554656
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1678552827650473086}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &8406276387339136674
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1678552827650473086}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_MaskInteraction: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &1775624290686083645
 GameObject:
   m_ObjectHideFlags: 0
@@ -1344,7 +930,6 @@ GameObject:
   - component: {fileID: 1889697928369062588}
   - component: {fileID: 4891865914562659242}
   - component: {fileID: 6360375355777515833}
-  - component: {fileID: 3408701131278152142}
   m_Layer: 0
   m_Name: Olive5
   m_TagString: Olives
@@ -1400,7 +985,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 698a8a42929b04c69b52ddc576ba00e8, type: 2}
+  - {fileID: 2100000, guid: 4159d70adae457042a2571eccf6ae41d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1424,27 +1009,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &3408701131278152142
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1775624290686083645}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Radius: 0.04029721
-  m_Center: {x: -0.01, y: -0.03, z: -0.13}
 --- !u!1 &2966486999333973499
 GameObject:
   m_ObjectHideFlags: 0
@@ -1458,6 +1022,7 @@ GameObject:
   - component: {fileID: 1226150949768325270}
   - component: {fileID: 4160276340693139782}
   - component: {fileID: 843672264849949557}
+  - component: {fileID: 656272164370128163}
   - component: {fileID: 2161788544743954996}
   - component: {fileID: 7682387867483639058}
   - component: {fileID: 5121932386071085617}
@@ -1568,8 +1133,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.57456625, y: 0.061628316, z: 0.5762437}
-  m_Center: {x: 0.0068073384, y: 0.031795513, z: 0.015772613}
+  m_Size: {x: 0.57456625, y: 0.11814739, z: 0.5762437}
+  m_Center: {x: 0.0068073384, y: 0.06005505, z: 0.015772613}
 --- !u!54 &843672264849949557
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1597,6 +1162,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &656272164370128163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2966486999333973499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0c08254ff68f8749b1d20f7dc6c3087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PizzaTrigger
+  pizza: {fileID: 1679841745978638378}
 --- !u!114 &2161788544743954996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1788,7 +1366,6 @@ GameObject:
   - component: {fileID: 342696947130538519}
   - component: {fileID: 3954379566023185298}
   - component: {fileID: 1378444609989479232}
-  - component: {fileID: 8688454973718292416}
   m_Layer: 0
   m_Name: Mushroom5
   m_TagString: Mushroom
@@ -1844,7 +1421,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e4bddfdbc555c4e21a8646c54faa5f37, type: 2}
+  - {fileID: 2100000, guid: 4159d70adae457042a2571eccf6ae41d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1868,27 +1445,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &8688454973718292416
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3151199473641914338}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Radius: 0.03
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3536250446607061987
 GameObject:
   m_ObjectHideFlags: 0
@@ -1900,7 +1456,6 @@ GameObject:
   - component: {fileID: 428608549540924668}
   - component: {fileID: 6657806807799464928}
   - component: {fileID: 8231363576553946584}
-  - component: {fileID: 6612802705334006301}
   m_Layer: 0
   m_Name: Olive1 (1)
   m_TagString: Olives
@@ -1956,7 +1511,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 698a8a42929b04c69b52ddc576ba00e8, type: 2}
+  - {fileID: 2100000, guid: 4159d70adae457042a2571eccf6ae41d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1980,27 +1535,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &6612802705334006301
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3536250446607061987}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Radius: 0.04029721
-  m_Center: {x: -0.01, y: -0.03, z: -0.13}
 --- !u!1 &3596337649089459495
 GameObject:
   m_ObjectHideFlags: 0
@@ -2012,7 +1546,6 @@ GameObject:
   - component: {fileID: 4175569073377035752}
   - component: {fileID: 1022783705993988784}
   - component: {fileID: 4090514146978328452}
-  - component: {fileID: 3758889937250557828}
   m_Layer: 0
   m_Name: Olive4
   m_TagString: Olives
@@ -2068,7 +1601,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 698a8a42929b04c69b52ddc576ba00e8, type: 2}
+  - {fileID: 2100000, guid: 4159d70adae457042a2571eccf6ae41d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2092,27 +1625,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &3758889937250557828
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3596337649089459495}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Radius: 0.04029721
-  m_Center: {x: -0.01, y: -0.03, z: -0.13}
 --- !u!1 &4197451269859198402
 GameObject:
   m_ObjectHideFlags: 0
@@ -2124,7 +1636,6 @@ GameObject:
   - component: {fileID: 7013219624683629537}
   - component: {fileID: 8454883936338466073}
   - component: {fileID: 1477714026246196097}
-  - component: {fileID: 381588317406696864}
   m_Layer: 0
   m_Name: Onion1
   m_TagString: Onion
@@ -2180,7 +1691,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0909fcd825e1f4c31bee204a055763f4, type: 2}
+  - {fileID: 2100000, guid: 4159d70adae457042a2571eccf6ae41d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2204,27 +1715,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &381588317406696864
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4197451269859198402}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Radius: 0.03491947
-  m_Center: {x: 0, y: 0, z: -0.030042633}
 --- !u!1 &4304428911514452886
 GameObject:
   m_ObjectHideFlags: 0
@@ -2236,7 +1726,6 @@ GameObject:
   - component: {fileID: 7407630390946912980}
   - component: {fileID: 511704265183687191}
   - component: {fileID: 7175851046946818526}
-  - component: {fileID: 5670782054305278512}
   m_Layer: 0
   m_Name: Pepper3
   m_TagString: Pepper
@@ -2254,7 +1743,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.105, y: -0.019, z: 0.13}
-  m_LocalScale: {x: 0.05, y: 0.055000003, z: 0.05}
+  m_LocalScale: {x: 0.50395006, y: 0.5543451, z: 0.50395006}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1828918969456369303}
@@ -2266,7 +1755,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4304428911514452886}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: -4991699829951180597, guid: 64f07d68f6a2cde4199055cb10545b57, type: 3}
 --- !u!23 &7175851046946818526
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2292,7 +1781,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 02b19fa45321c4da0b75adc8f26ded41, type: 2}
+  - {fileID: 2100000, guid: 4159d70adae457042a2571eccf6ae41d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2316,27 +1805,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &5670782054305278512
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4304428911514452886}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Radius: 0.0339728
-  m_Center: {x: 0, y: -0.01, z: 0.00026340783}
 --- !u!1 &4413633788620313002
 GameObject:
   m_ObjectHideFlags: 0
@@ -2715,7 +2183,6 @@ GameObject:
   - component: {fileID: 8081005131388401361}
   - component: {fileID: 3415319613369280158}
   - component: {fileID: 452767627039508196}
-  - component: {fileID: 406383909620791871}
   m_Layer: 0
   m_Name: SauceLayer
   m_TagString: Untagged
@@ -2795,27 +2262,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &406383909620791871
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6714250293290229610}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7111630090441256935
 GameObject:
   m_ObjectHideFlags: 0
@@ -2827,7 +2273,6 @@ GameObject:
   - component: {fileID: 5242981041308487857}
   - component: {fileID: 7907287090542169137}
   - component: {fileID: 444714302902333537}
-  - component: {fileID: 7829998696602192436}
   m_Layer: 0
   m_Name: Onion3
   m_TagString: Onion
@@ -2883,7 +2328,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0909fcd825e1f4c31bee204a055763f4, type: 2}
+  - {fileID: 2100000, guid: 4159d70adae457042a2571eccf6ae41d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2907,27 +2352,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &7829998696602192436
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7111630090441256935}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Radius: 0.03491947
-  m_Center: {x: 0, y: 0, z: -0.030042633}
 --- !u!1 &7140131395673181363
 GameObject:
   m_ObjectHideFlags: 0
@@ -2939,7 +2363,6 @@ GameObject:
   - component: {fileID: 7117930792163099269}
   - component: {fileID: 525870884721382342}
   - component: {fileID: 5535351516975026581}
-  - component: {fileID: 7617890308070627277}
   m_Layer: 0
   m_Name: Mushroom2
   m_TagString: Mushroom
@@ -2995,7 +2418,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e4bddfdbc555c4e21a8646c54faa5f37, type: 2}
+  - {fileID: 2100000, guid: 4159d70adae457042a2571eccf6ae41d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3019,27 +2442,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &7617890308070627277
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7140131395673181363}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Radius: 0.03
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8377789775946993373
 GameObject:
   m_ObjectHideFlags: 0
@@ -3051,7 +2453,6 @@ GameObject:
   - component: {fileID: 745416904431898883}
   - component: {fileID: 5588956169863239628}
   - component: {fileID: 2988365680808191717}
-  - component: {fileID: 6739499217999216095}
   m_Layer: 0
   m_Name: Pepper2
   m_TagString: Pepper
@@ -3069,7 +2470,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.0774, y: 0.004, z: -0.0075}
-  m_LocalScale: {x: 0.05, y: 0.055000003, z: 0.05}
+  m_LocalScale: {x: 0.50395006, y: 0.5543451, z: 0.50395006}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1828918969456369303}
@@ -3081,7 +2482,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8377789775946993373}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: -4991699829951180597, guid: 64f07d68f6a2cde4199055cb10545b57, type: 3}
 --- !u!23 &2988365680808191717
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3107,7 +2508,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 02b19fa45321c4da0b75adc8f26ded41, type: 2}
+  - {fileID: 2100000, guid: 4159d70adae457042a2571eccf6ae41d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3131,27 +2532,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &6739499217999216095
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8377789775946993373}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Radius: 0.0339728
-  m_Center: {x: 0, y: -0.01, z: 0.00026340783}
 --- !u!1 &8552491206093447623
 GameObject:
   m_ObjectHideFlags: 0
@@ -3163,7 +2543,6 @@ GameObject:
   - component: {fileID: 36125240697266103}
   - component: {fileID: 8720737646841207377}
   - component: {fileID: 8207606234879274446}
-  - component: {fileID: 5605519846951837539}
   m_Layer: 0
   m_Name: Olive3
   m_TagString: Olives
@@ -3219,7 +2598,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 698a8a42929b04c69b52ddc576ba00e8, type: 2}
+  - {fileID: 2100000, guid: 4159d70adae457042a2571eccf6ae41d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3243,27 +2622,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &5605519846951837539
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8552491206093447623}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Radius: 0.04029721
-  m_Center: {x: -0.01, y: -0.03, z: -0.13}
 --- !u!1 &8558725400053411795
 GameObject:
   m_ObjectHideFlags: 0
@@ -3275,7 +2633,6 @@ GameObject:
   - component: {fileID: 7506919844903883684}
   - component: {fileID: 1967314726407315359}
   - component: {fileID: 266622394733020870}
-  - component: {fileID: 3960704409738986763}
   m_Layer: 0
   m_Name: Mushroom3
   m_TagString: Mushroom
@@ -3331,7 +2688,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e4bddfdbc555c4e21a8646c54faa5f37, type: 2}
+  - {fileID: 2100000, guid: 4159d70adae457042a2571eccf6ae41d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3355,27 +2712,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &3960704409738986763
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8558725400053411795}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Radius: 0.03
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8622548499101842110
 GameObject:
   m_ObjectHideFlags: 0
@@ -3387,7 +2723,6 @@ GameObject:
   - component: {fileID: 2356073676843617674}
   - component: {fileID: 1183798169396241808}
   - component: {fileID: 1097647688999958897}
-  - component: {fileID: 1360054419292825575}
   m_Layer: 0
   m_Name: Pepper4
   m_TagString: Pepper
@@ -3405,7 +2740,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.034, y: -0.046, z: 0.13}
-  m_LocalScale: {x: 0.05, y: 0.055000003, z: 0.05}
+  m_LocalScale: {x: 0.50395006, y: 0.5543451, z: 0.50395006}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1828918969456369303}
@@ -3417,7 +2752,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8622548499101842110}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: -4991699829951180597, guid: 64f07d68f6a2cde4199055cb10545b57, type: 3}
 --- !u!23 &1097647688999958897
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3443,7 +2778,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 02b19fa45321c4da0b75adc8f26ded41, type: 2}
+  - {fileID: 2100000, guid: 4159d70adae457042a2571eccf6ae41d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3467,27 +2802,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &1360054419292825575
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8622548499101842110}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Radius: 0.0339728
-  m_Center: {x: 0, y: -0.01, z: 0.00026340783}
 --- !u!1 &8723237249260981733
 GameObject:
   m_ObjectHideFlags: 0
@@ -3497,8 +2811,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1828918969456369303}
-  - component: {fileID: 6427913097722097921}
-  - component: {fileID: 8087141964683803506}
   m_Layer: 0
   m_Name: PepperGroup
   m_TagString: Pepper
@@ -3526,76 +2838,6 @@ Transform:
   - {fileID: 9143478603920777340}
   m_Father: {fileID: 4831348196784665985}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &6427913097722097921
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8723237249260981733}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &8087141964683803506
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8723237249260981733}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_MaskInteraction: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &9008613830651929710
 GameObject:
   m_ObjectHideFlags: 0
@@ -3607,7 +2849,6 @@ GameObject:
   - component: {fileID: 411420089350838959}
   - component: {fileID: 7085019435960638739}
   - component: {fileID: 4283611104877065849}
-  - component: {fileID: 5542168670322488577}
   m_Layer: 0
   m_Name: CheeseLayer
   m_TagString: Untagged
@@ -3687,24 +2928,3 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5542168670322488577
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9008613830651929710}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
