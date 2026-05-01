@@ -10,6 +10,7 @@ using TMPro;
 /// </summary>
 public class OnboardingManager : MonoBehaviour
 {
+    public static OnboardingManager instance;
     // ─────────────────────────────────────────────
     // Inspector Fields
     // ─────────────────────────────────────────────
@@ -122,6 +123,7 @@ public class OnboardingManager : MonoBehaviour
 
     void Start()
     {
+        instance = this;
         SaveOriginalColors();
         BuildSteps();
         SetupInitialUI();

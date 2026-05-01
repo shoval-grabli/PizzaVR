@@ -22,11 +22,17 @@ public class Pizza : MonoBehaviour
         } 
     }
 
+    public void Init(PizzaOrder order)
+    {
+        this.order = order;
+    }
     internal void ActivateLayer(PizzaLayerReveal pizzaLayer)
     {
+        Debug.Break();
         if (!cooked && layers.Exists(l => l.layersIngredient == pizzaLayer.layersIngredient))
         {
             PizzaLayerReveal layer = layers.Find(l => l.layersIngredient == pizzaLayer.layersIngredient);
+            print("layer about to reveal: " + layer.layersIngredient +"\n is revealed: " + layer.Revealed);
             if (!layer.Revealed)
                 layer.Reveal();
         }
@@ -36,6 +42,7 @@ public class Pizza : MonoBehaviour
         if (!cooked && layers.Exists(l => l.layersIngredient == topping.topping.toppingName))
         {
             PizzaLayerReveal layer = layers.Find(l => l.layersIngredient == topping.topping.toppingName);
+            print("layer about to reveal: " + layer.layersIngredient + "\n is revealed: " + layer.Revealed);
             if (!layer.Revealed)
                 layer.Reveal();
         }
@@ -69,12 +76,13 @@ public class Pizza : MonoBehaviour
     {
         PizzaToppingMono ingredient;
         if (!GO.TryGetComponent(out ingredient)) return;
-
+        if(!ingredient.enabled) return;
+        print("topping found in inspection");
         // בדוק אם זו התוספת הנכונה בתור
-        if (!Order.IsNextTopping(ingredient.topping.toppingName))
-        {
-            return;
-        }
+        //if (!Order.IsNextTopping(ingredient.topping.toppingName))
+        //{
+        //    return;
+        //}
         ActivateLayer(ingredient);
 
     }
@@ -89,15 +97,17 @@ public class Pizza : MonoBehaviour
         OnEndCooking.Invoke();
     }
 
-    internal bool Pack(Transform packingLocation)
+    public bool IsReadyForPacking()
+    {
+        return cooked;
+    }
+    internal void Pack(Transform packingLocation)
     {
         if (!cooked)
-            return false;
+            return;
         packed = true;
-        GetComponent<ReturnToOriginAuto>().Override = true;
         transform.position = packingLocation.position;
         transform.rotation = packingLocation.rotation;
         order.PizzaDelivered();
-        return true;
     }
 }

@@ -16,11 +16,11 @@ public class PizzaOrder : MonoBehaviour
     public TMPro.TextMeshProUGUI orderText;
 
     [Header("אונבורדינג")]
-    public OnboardingManager onboardingManager;
     public UnityEngine.UI.Slider progressBar;
 
     [Header("הפיצה")]
     public Pizza pizza;
+    public OrderUI orderUI;
     private Color originalPizzaColor;
 
     private float timeRemaining;
@@ -46,8 +46,15 @@ public class PizzaOrder : MonoBehaviour
 
     void Start()
     {
+        OrdersDispatcher.instance.SubmitOrder(this);
+        Init();
+    }
+
+    public void Init()
+    {
         // הגדר AudioSource
-        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+            audioSource = GetComponent<AudioSource>();
         if (audioSource == null)
             audioSource = gameObject.AddComponent<AudioSource>();
         audioSource.spatialBlend = 0f;
@@ -60,12 +67,14 @@ public class PizzaOrder : MonoBehaviour
             if (r) originalPizzaColor = r.material.color;
         }
 
+        pizza.Init(this);
+
         GenerateRandomOrder();
         timeRemaining = orderTime;
         orderActive = true;
         UpdateUI();
         UpdateProgress();
-        
+
         var grab = pizza.GetComponent
             <UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable>();
         if (grab != null) grab.enabled = false;
@@ -183,7 +192,7 @@ public class PizzaOrder : MonoBehaviour
         {
             display += (pizza.RevealedLayers.Exists(revealed => revealed == requiredIngredients[i]) ? "[V]" : "[ ]") + requiredIngredients[i].ToString() + ".\n";
         }
-        orderText.text = display;
+        orderUI.UpdateUI(display);
     }
 
     void UpdateProgress()
@@ -240,13 +249,13 @@ public class PizzaOrder : MonoBehaviour
         Debug.Log("Pizza complete!");
         if (orderText != null)
             orderText.text = "";
-
         orderActive = false;
 
-        if (onboardingManager != null)
-            onboardingManager.ShowFinalStep();
+        if (OnboardingManager.instance != null)
+            OnboardingManager.instance.ShowFinalStep();
 
         if (progressBar != null) progressBar.value = 1f;
+        OrdersDispatcher.instance.PizzaPacked(this);
     }
 
     // ─────────────────────────────────────────────

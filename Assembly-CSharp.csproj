@@ -74,6 +74,7 @@
     <Compile Include="Assets\Scripts\OvenCooking.cs" />
     <Compile Include="Assets\Scripts\PizzaPlacements.cs" />
     <Compile Include="Assets\Scripts\PizzaToppingMono.cs" />
+    <Compile Include="Assets\Scripts\OrderUI.cs" />
     <Compile Include="Assets\Scripts\Utils\XR\XRInteractableAutoActivate.cs" />
     <Compile Include="Assets\Scripts\OnboardingManager.cs" />
     <Compile Include="Assets\VRTemplateAssets\Scripts\BezierCurve.cs" />
@@ -85,6 +86,7 @@
     <Compile Include="Assets\VRTemplateAssets\Scripts\CalloutGazeController.cs" />
     <Compile Include="Assets\Scripts\XR\XRStartingPos.cs" />
     <Compile Include="Assets\Scripts\PizzaTrigger.cs" />
+    <Compile Include="Assets\Scripts\Managers\OrdersDispatcher.cs" />
     <Compile Include="Assets\Scripts\PizzaLayerReveal.cs" />
     <Compile Include="Assets\Scripts\Pizza.cs" />
     <Compile Include="Assets\Scripts\PizzaTopping.cs" />

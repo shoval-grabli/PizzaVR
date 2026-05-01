@@ -16,25 +16,29 @@ public class BoxPacking : MonoBehaviour
     {
         Pizza pizza;
         other.gameObject.TryGetComponent(out pizza);
-        if (pizza != null)
-        {
-            StartCoroutine(PackWithDelay(pizza));
-        }
+        if (pizza == null) return;
+        if (!pizza.IsReadyForPacking()) return;
+        
+        other.gameObject.GetComponent<ReturnToOriginAuto>().Override = true;
+        StartCoroutine(PackWithDelay(pizza));
+        
     }
 
     IEnumerator PackWithDelay(Pizza pizza)
     {
-        // המתן 2 שניות
+        pizza.gameObject.transform.position = pizzaLocation.position;
+        pizza.gameObject.transform.rotation = pizzaLocation.rotation;
+        
         yield return new WaitForSeconds(voiceDelay);
 
-        // הפעל קריינות אריזה
-        //FindFirstObjectByType<OnboardingManager>()?.OnboardingActionCompleted("packing");
         OnPackingFinished.Invoke();
 
         // הודע שהפיצה נמסרה
-        if (pizza.Pack(pizzaLocation))
+        if (pizza.IsReadyForPacking())
+        {
             print("Pizza delivered successfully");
-        //FindFirstObjectByType<PizzaOrder>()?.PizzaDelivered(pizza);
+            pizza.Pack(pizzaLocation);
+        }
 
     }
 }
