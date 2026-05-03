@@ -16,8 +16,9 @@ public class OrdersDispatcher : MonoBehaviour
     [SerializeField] bool ImmediateDispatchAfterPack;
 
     List<PizzaOrder> orders = new List<PizzaOrder>();
+    public List<PizzaOrder> Orders { get { return new List<PizzaOrder>(orders); } }
 
-    private void Start()
+    private void Awake()
     {
         instance = this;
     }
@@ -45,5 +46,6 @@ public class OrdersDispatcher : MonoBehaviour
         order.pizza = pizza;
         order.orderUI = orderUI;
         orders.Add(order);
+        order.Init();
     }
 }

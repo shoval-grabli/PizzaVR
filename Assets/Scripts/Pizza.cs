@@ -14,7 +14,9 @@ public class Pizza : MonoBehaviour
     public UnityEvent OnEndCooking;
 
     bool cooked = false;
+    public bool Cooked { get => cooked; }
     bool packed = false;
+    public bool Packed { get => packed; }
 
     public List<PizzaIngredient> RevealedLayers {  get { List<PizzaIngredient> ingredients = new List<PizzaIngredient>(); 
             foreach(PizzaLayerReveal layer in layers.FindAll(l => l.Revealed).ToList()) ingredients.Add(layer.layersIngredient);
@@ -47,29 +49,12 @@ public class Pizza : MonoBehaviour
                 layer.Reveal();
         }
     }
-    //private void OnTriggerEnter(Collider collider)
-    //{
-    //    PizzaToppingMono ingredient;
-    //    if (!collider.gameObject.TryGetComponent(out ingredient)) return;
 
-    //    // בדוק אם זו התוספת הנכונה בתור
-    //    if (!Order.IsNextTopping(ingredient.topping.toppingName))
-    //    {
-    //        return;
-    //    }
-    //    ActivateLayer(ingredient);
-    //}
-    //private void OnCollisionEnter(Collision collider)
+    //bool PreviousGroupRevealed(PizzaIngredient ingredient)
     //{
-    //    PizzaToppingMono ingredient;
-    //    if (!collider.gameObject.TryGetComponent(out ingredient)) return;
-
-    //    // בדוק אם זו התוספת הנכונה בתור
-    //    if (!Order.IsNextTopping(ingredient.topping.toppingName))
-    //    {
-    //        return;
-    //    }
-    //    ActivateLayer(ingredient);
+    //    if(PizzaIngredientGroups.pizzaIngredientsGroups)
+    //        return true;
+    //    if(order.RequiredIngredients.)
     //}
 
     public void InspectTopping(GameObject GO)
@@ -96,6 +81,10 @@ public class Pizza : MonoBehaviour
         order.PizzaCooked();
         OnEndCooking.Invoke();
     }
+    public bool IsReadyForCooking()
+    {
+        return Order.RequiredIngredients.All(req => layers.Find(layers => layers.layersIngredient == req).Revealed);
+    }
 
     public bool IsReadyForPacking()
     {
@@ -106,8 +95,6 @@ public class Pizza : MonoBehaviour
         if (!cooked)
             return;
         packed = true;
-        transform.position = packingLocation.position;
-        transform.rotation = packingLocation.rotation;
         order.PizzaDelivered();
     }
 }

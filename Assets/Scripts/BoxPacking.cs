@@ -12,13 +12,17 @@ public class BoxPacking : MonoBehaviour
     public UnityEvent OnPacking;
     public UnityEvent OnPackingFinished;
 
+    bool cooking;
+
     void OnTriggerEnter(Collider other)
     {
+        if(cooking) return;
         Pizza pizza;
         other.gameObject.TryGetComponent(out pizza);
         if (pizza == null) return;
         if (!pizza.IsReadyForPacking()) return;
         
+        cooking = true;
         other.gameObject.GetComponent<ReturnToOriginAuto>().Override = true;
         StartCoroutine(PackWithDelay(pizza));
         
@@ -39,6 +43,7 @@ public class BoxPacking : MonoBehaviour
             print("Pizza delivered successfully");
             pizza.Pack(pizzaLocation);
         }
+        cooking = false;
 
     }
 }

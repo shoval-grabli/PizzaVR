@@ -2330,24 +2330,6 @@ Transform:
   - {fileID: 1869810208}
   m_Father: {fileID: 474299892}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &263266921 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2966486999333973499, guid: 5baca1367f27048d08398e991700b2f1, type: 3}
-  m_PrefabInstance: {fileID: 1366268013}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &263266934
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 263266921}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bef289ff4c6596439b92b94c9ac4da7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CollisionInformer
-  message: 
 --- !u!1001 &271677856
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10042,17 +10024,6 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     m_Variable: {fileID: 0}
---- !u!114 &977801264 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1679841745978638378, guid: 5baca1367f27048d08398e991700b2f1, type: 3}
-  m_PrefabInstance: {fileID: 1366268013}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 414dc06934d3c174e96a83b2e28a5888, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Pizza
 --- !u!1 &992496490
 GameObject:
   m_ObjectHideFlags: 0
@@ -10578,6 +10549,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5161989964646342875, guid: c18c2334d0f5bb94cbb090401535d577, type: 3}
   m_PrefabInstance: {fileID: 1026806999}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1033081224 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1679841745978638378, guid: 5baca1367f27048d08398e991700b2f1, type: 3}
+  m_PrefabInstance: {fileID: 1366268013}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 414dc06934d3c174e96a83b2e28a5888, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Pizza
 --- !u!1 &1043175136
 GameObject:
   m_ObjectHideFlags: 0
@@ -14585,10 +14567,7 @@ PrefabInstance:
     - {fileID: 5961498087296693689, guid: 5baca1367f27048d08398e991700b2f1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2966486999333973499, guid: 5baca1367f27048d08398e991700b2f1, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 263266934}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5baca1367f27048d08398e991700b2f1, type: 3}
 --- !u!1 &1374834537
 GameObject:
@@ -20936,7 +20915,7 @@ MonoBehaviour:
   orderUIPF: {fileID: 3500036820066557539, guid: e5f8af120538ddd48af557c040c55671, type: 3}
   pizzaPF: {fileID: 1679841745978638378, guid: 5baca1367f27048d08398e991700b2f1, type: 3}
   OrdersUIGroup: {fileID: 1425836561}
-  ImmediateDispatchAfterPack: 1
+  ImmediateDispatchAfterPack: 0
 --- !u!1 &1972724780
 GameObject:
   m_ObjectHideFlags: 0
@@ -22741,7 +22720,7 @@ PrefabInstance:
     - target: {fileID: 5243319975618791109, guid: eecdf952f57bc0043ae4a2db6310bd37, type: 3}
       propertyPath: pizza
       value: 
-      objectReference: {fileID: 977801264}
+      objectReference: {fileID: 1033081224}
     - target: {fileID: 5243319975618791109, guid: eecdf952f57bc0043ae4a2db6310bd37, type: 3}
       propertyPath: orderUI
       value: 
@@ -22757,7 +22736,7 @@ PrefabInstance:
     - target: {fileID: 5243319975618791109, guid: eecdf952f57bc0043ae4a2db6310bd37, type: 3}
       propertyPath: pizzaObject
       value: 
-      objectReference: {fileID: 977801264}
+      objectReference: {fileID: 0}
     - target: {fileID: 5243319975618791109, guid: eecdf952f57bc0043ae4a2db6310bd37, type: 3}
       propertyPath: progressBar
       value: 

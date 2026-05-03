@@ -1,14 +1,7 @@
 fileFormatVersion: 2
 guid: c237780e1c5da3546ac04cade945f216
-AssetOrigin:
-  serializedVersion: 1
-  productId: 272003
-  packageName: Lowpoly Modular Pizza Props - Fast Food Series
-  packageVersion: 1.0
-  assetPath: Assets/3D-Food-Assets/Pizza-Props/Meshes/Pizza_Worktop.fbx
-  uploadId: 650346
 ModelImporter:
-  serializedVersion: 24200
+  serializedVersion: 22200
   internalIDToNameTable: []
   externalObjects:
   - first:
@@ -16,11 +9,6 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: No Name
     second: {fileID: 2100000, guid: def25ed761adc1f4592457812033a40b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Pizza_Oven
-    second: {fileID: 2100000, guid: ad18acde0cdbbb442a1e1b986877ec18, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -33,6 +21,8 @@ ModelImporter:
     optimizeGameObjects: 0
     removeConstantScaleCurves: 0
     motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -73,9 +63,6 @@ ModelImporter:
     maxBonesPerVertex: 4
     minBoneWeight: 0.001
     optimizeBones: 1
-    generateMeshLods: 0
-    meshLodGenerationFlags: 0
-    maximumMeshLod: -1
     meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
@@ -125,3 +112,10 @@ ModelImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 272003
+  packageName: Lowpoly Modular Pizza Props - Fast Food Series
+  packageVersion: 1.0
+  assetPath: Assets/3D-Food-Assets/Pizza-Props/Meshes/Pizza_Worktop.fbx
+  uploadId: 650346

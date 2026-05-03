@@ -69,13 +69,16 @@
     <Compile Include="Assets\Scripts\SauceDetector.cs" />
     <Compile Include="Assets\VRTemplateAssets\Scripts\RayAttachModifier.cs" />
     <Compile Include="Assets\NotToSave\CollisionInformer.cs" />
+    <Compile Include="Assets\Scripts\AudioManager.cs" />
     <Compile Include="Assets\Scripts\ToppingBox.cs" />
     <Compile Include="Assets\VRTemplateAssets\Scripts\XRPokeFollowAffordanceFill.cs" />
+    <Compile Include="Assets\Scripts\Clock.cs" />
     <Compile Include="Assets\Scripts\OvenCooking.cs" />
     <Compile Include="Assets\Scripts\PizzaPlacements.cs" />
     <Compile Include="Assets\Scripts\PizzaToppingMono.cs" />
     <Compile Include="Assets\Scripts\OrderUI.cs" />
     <Compile Include="Assets\Scripts\Utils\XR\XRInteractableAutoActivate.cs" />
+    <Compile Include="Assets\Scripts\ToppingTeleport.cs" />
     <Compile Include="Assets\Scripts\OnboardingManager.cs" />
     <Compile Include="Assets\VRTemplateAssets\Scripts\BezierCurve.cs" />
     <Compile Include="Assets\VRTemplateAssets\Scripts\LaunchProjectile.cs" />
